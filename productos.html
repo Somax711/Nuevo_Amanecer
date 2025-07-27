@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevo Amanecer - productos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!--menu-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+   <a class="navbar-brand" href="portada.html"></a>
+    <!-- Botón hamburguesa para móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú a la derecha -->
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="portada.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="portada.html#sobrenosotras">Sobre Nosotras</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="productos.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="portada.html#redesSociales">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+ 
+</nav>
+
+<!-- Carrusel de productos disponibles -->
+<section class="productos-carrusel-section">
+  <h2 class="productos-title">Entrega Inmediata</h2>
+  <p class="productos-subtitle">Descubre nuestra variedad de productos disponibles para entrega inmediata.</p>
+  <button id="prevBtn" aria-label="Producto anterior" class="carrusel-btn carrusel-btn-left">◀</button>
+  <button id="nextBtn" aria-label="Producto siguente" class="carrusel-btn carrusel-btn-right">▶</button>
+  <div id="carousel" class="productos-carrusel">
+    <!-- Producto 1 -->
+    <div class="producto-card">
+      <img src="imagenes/100_citas_juntos.png" alt="Producto 1">
+      <h3>Agenda 100 citas juntos</h3>
+      <p>Agenda personalizada para registrar momentos especiales.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 2 -->
+    <div class="producto-card">
+      <img src="imagenes/biblia_colorear1.png" alt="Producto 2">
+      <h3>Biblia para colorear</h3>
+      <p>Biblia ilustrada para colorear y personalizar.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 3 -->
+    <div class="producto-card">
+      <img src="imagenes/biblia_colorear_rosada.png" alt="Producto 3">
+      <h3>Biblia Niñas</h3>
+      <p>Biblia ilustrada y personalizada para niñas.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 4 -->
+    <div class="producto-card">
+      <img src="imagenes/biblia_niños.png" alt="Producto 4">
+      <h3>Biblia de promesas para niños</h3>
+      <p>Biblia ilustrada y personalizada para niños.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 5 -->
+    <div class="producto-card">
+      <img src="imagenes/llavero_promesa_leon.png" alt="Producto 5">
+      <h3>Llavero Promesa</h3>
+      <p>Llavero con iniciales y detalles únicos.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 6 -->
+    <div class="producto-card">
+      <img src="imagenes/libro_colorear.png" alt="Producto 6">
+      <h3>Cuaderno Creativo</h3>
+      <p>Cuaderno para colorear y personalizar con mensajes inspiradores.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 7 -->
+    <div class="producto-card">
+      <img src="imagenes/llavero2.png" alt="Producto 7">
+      <h3>Llavero promesas</h3>
+      <p>Llavero con iniciales y detalles únicos.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+      <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 8 -->
+    <div class="producto-card">
+      <img src="imagenes/llavero_promesa3.png" alt="Producto 8">
+      <h3>Llavero promesa</h3>
+      <p>Llavero con iniciales y detalles únicos.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 9 -->
+    <div class="producto-card">
+      <img src="imagenes/llavero_promesa4.png" alt="Producto 9">
+      <h3>Llavero promesa</h3>
+      <p>Llavero con iniciales y detalles únicos.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 10 -->
+    <div class="producto-card">
+      <img src="imagenes/papa_cuentame.png" alt="Producto 10">
+      <h3>Cuaderno Papa cuentame de ti</h3>
+      <p>Cuaderno para registrar historias y recuerdos familiares.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+    <!-- Producto 11 -->
+    <div class="producto-card">
+      <img src="imagenes/promesas_biblia.png" alt="Producto 11">
+      <h3>LLavero promesa</h3> 
+      <p>Llavero con detalles únicos.</p>
+      <a href="https://wa.me/56959243283?text=Hola,%20quiero%20hacer%20una%20consulta%20desde%20la%20web%20Nuevo%20Amanecer" target="_blank" class="producto-btn">
+        <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </div>
+  <hr class="separator" />
+</section>
+
+<!-- Galería de Fotos -->
+<section class="galeria-section">
+  <h2 class="galeria-title"><span>✨</span>Galería de Fotos</h2>
+  <p class="galeria-subtitle">Explora nuestra galería de fotos de productos y eventos.</p>
+  <div class="galeria-grid">
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/100citasjuntos.jpg" alt="Foto 1" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/agenda.jpg" alt="Foto 2" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/agenda1.jpg" alt="Foto 3" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/agenda2.jpg" alt="Foto 4" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/agenda3.jpg" alt="Foto 5" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/agenda4.jpg" alt="Foto 6" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/agenda5.jpg" alt="Foto 7" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/agendapersonal.jpg" alt="Foto 8" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/agendapersonalizada.jpg" alt="Foto 9" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/diariooracion.jpg" alt="Foto 10" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/librodefirmas.jpg" alt="Foto 11" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/pack.jpg" alt="Foto 12" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/pack1.jpg" alt="Foto 13" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/pack2.jpg" alt="Foto 14" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/pack3.jpg" alt="Foto 15" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria//pack_diadelamama.jpg" alt="Foto 15" />
+    </div>
+      <div class="galeria-img-box">
+      <img src="imagenes/galeria/packjehova.jpg" alt="Foto 16" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/packlibrodiariotaza.jpg" alt="Foto 17" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/packpapa.jpg" alt="Foto 18" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/packstich.jpg" alt="Foto 19" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/papacuentame.jpg" alt="Foto 20" />
+    </div>
+    <div class="galeria-img-box">
+      <img src="imagenes/galeria/tazon_papa.png" alt="Foto 21" />
+    </div>
+</section>
+<div id="botonSorpresa" class="boton-sorpresa">
+  🎁 ¡Diseñamos tu idea! Haz tu pedido aquí 💌
+</div>
+ <script>
+  function mostrarBotonSorpresa() {
+    const boton = document.getElementById("botonSorpresa");
+    boton.style.display = "block";
+
+    setTimeout(() => {
+      boton.style.display = "none";
+    }, 5000); // Ocultar después de 5 segundos
+  }
+
+  // Mostrar inicialmente después de 4 segundos
+  setTimeout(() => {
+    mostrarBotonSorpresa();
+  }, 4000);
+
+  // Repetir cada 20 segundos
+  setInterval(() => {
+    mostrarBotonSorpresa();
+  }, 20000);
+
+  // Al hacer clic, redirige a contacto
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("botonSorpresa").onclick = function () {
+      window.location.href = "portada.html#redesSociales";
+    };
+  });
+</script>
+
+<!-- Cola del botón (fija en la pantalla) -->
+<div id="colaBoton" class="cola-boton" onclick="mostrarBotonSorpresa()">
+  📩
+</div>
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="imagenes/logo_nuevo.png" alt="Logo Nuevo Amanecer" class="footer-logo-img">
+      </div>
+      <div class="footer-info">
+        <p>© 2025 Nuevo Amanecer. Todos los derechos reservados.</p>
+        <p>Diseñado con 💻 y ✨ por <strong>KarenDEV.com</strong></p>
+      </div>
+    </div>
+   
+  </footer>
+
+  <!-- Carrusel funcionalidad -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const carrusel = document.getElementById("carousel");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  function getScrollAmount() {
+    const card = carrusel.querySelector('.producto-card');
+    return card ? card.offsetWidth + 32 : 260;
+  }
+
+  prevBtn.addEventListener("click", function() {
+    carrusel.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", function() {
+    carrusel.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+  });
+});
+
+  document.getElementById("menuToggle").addEventListener("click", function() {
+    document.getElementById("navLinks").classList.toggle("show");
+  });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
