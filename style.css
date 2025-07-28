@@ -1014,21 +1014,20 @@
       transform: scale(1.08);
     }
 
-
 /* --- Responsive general--- */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .navbar-nav .nav-link {
-    font-size: 2rem;
+    font-size: 1rem;
     padding-bottom: 4px;
   }
   .hero-title {
-    font-size: 8rem;
+    font-size: 2rem;
   }
   .hero-subtitle {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .hero-menu a {
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0 1.5rem;
   }
   .favoritos-title,
@@ -1038,37 +1037,37 @@
   .contacto-title,
   .productos-title,
   .galeria-title {
-    font-size: 5rem;
+    font-size: 2rem;
   }
   .favorito-card h3,
   .testimonio-card span,
   .como-funciona-card h3,
   .producto-card h3 {
-    font-size: 3rem;
+    font-size: 1rem;
   }
   .favorito-card p,
   .testimonio-card p,
   .como-funciona-card p,
   .producto-card p,
   .galeria-subtitle {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .sobre-nosotras-title {
-    font-size: 4rem;
+    font-size: 1rem;
   }
   .sobre-nosotras-container p {
-    font-size:  3rem;
+    font-size:  1rem;
   }
   span{
-    font-size: 2.5rem;
+    font-size: 1rem;
   }
  
   .favorito-card img,
   .producto-card img,
   .galeria-img-box,
   .sobre-nosotras-img {
-    height: 200px;
+    height: 100px;
   }
   .productos-carrusel {
     gap: 1rem;
@@ -1081,10 +1080,10 @@
     grid-template-columns: 1fr 1fr;
   }
   .contacto-description {
-    font-size: 5rem;
+    font-size: 1rem;
   }
   .footer-logo-img {
-    width: 44px;
-    height: 44px;
+    width: 20px;
+    height: 20px;
   }
 }
