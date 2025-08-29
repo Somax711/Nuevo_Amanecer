@@ -1,9 +1,3 @@
-¡Excelente\! Tienes razón. Para el proyecto `Nuevo_Amanecer`, es fundamental que las instrucciones de instalación sean muy claras para que cualquier persona pueda ejecutar el código sin problemas.
-
-Aquí tienes el `README.md` actualizado con el formato de código correcto.
-
------
-
 # `Nuevo_Amanecer` ✨
 
 `Nuevo_Amanecer` es una aplicación de escritorio diseñada para ayudarte a gestionar citas y optimizar la planificación de eventos. Con una interfaz sencilla y amigable, facilita la organización personal y profesional, permitiendo a los usuarios programar sus actividades de manera eficiente y sin complicaciones.
