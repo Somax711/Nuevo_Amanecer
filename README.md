@@ -1,28 +1,29 @@
 # `Nuevo_Amanecer` ✨
 
-`Nuevo_Amanecer` es una aplicación de escritorio diseñada para ayudarte a gestionar citas y optimizar la planificación de eventos. Con una interfaz sencilla y amigable, facilita la organización personal y profesional, permitiendo a los usuarios programar sus actividades de manera eficiente y sin complicaciones.
+`Nuevo_Amanecer` es una página web diseñada para un negocio o servicio. Construida con tecnologías web estándar, el sitio web presenta una estructura clara, un diseño adaptable y una interfaz de usuario limpia para asegurar una excelente experiencia de navegación en cualquier dispositivo.
 
 -----
 
 ### Características 🚀
 
-  * **Creación de Citas:** Registra nuevas citas con fechas, horas y descripciones detalladas.
-  * **Visualización de Eventos:** Consulta todas las citas programadas en un calendario o lista.
-  * **Gestión de Citas:** Edita o elimina citas existentes de forma intuitiva.
-  * **Recordatorios y Notificaciones:** (Función a implementar) Recibe alertas para no olvidar tus compromisos importantes.
+  * **Página de Inicio:** Una presentación visual para dar la bienvenida a los visitantes.
+  * **Secciones de Contenido:** Diferentes apartados para mostrar información sobre servicios, una galería, o detalles de contacto.
+  * **Diseño Responsivo:** El diseño se adapta automáticamente a pantallas de escritorio, tablets y móviles.
+  * **Navegación Intuitiva:** El menú y los enlaces facilitan la exploración de la página.
 
 -----
 
 ### Tecnologías Utilizadas 🛠️
 
-  * **Python:** Lenguaje principal de programación para toda la lógica de la aplicación.
-  * **SQLite:** Base de datos para almacenar la información de las citas de manera local y eficiente.
+  * **HTML5:** Para la estructura fundamental de la página web.
+  * **CSS3:** Para el diseño, estilo y la presentación visual.
+  * **JavaScript:** Para añadir interactividad y dinamismo a la página web.
 
 -----
 
 ### Instalación y Uso 💻
 
-Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local.
+Como este es un proyecto web estático, no necesitas una instalación compleja. Simplemente clona el repositorio y abre el archivo `index.html` en tu navegador web.
 
 1.  **Clona el repositorio:**
 
@@ -36,24 +37,17 @@ Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local.
     cd Nuevo_Amanecer
     ```
 
-3.  **Ejecuta la aplicación:**
-
-    ```bash
-    python main.py
-    ```
+3.  **Abre la página web:**
+    Simplemente haz doble clic en el archivo `index.html` o arrástralo y suéltalo en la ventana de tu navegador.
 
 -----
 
-### Contribuciones 🤝
+### Contribuciones 
 
-¡Las contribuciones son bienvenidas\! Si encuentras algún error, tienes ideas para nuevas características o quieres mejorar el código, no dudes en abrir un *issue* o enviar un *pull request*.
+¡Las contribuciones son bienvenidas\! Si tienes ideas para mejorar la web o encuentras algún error, no dudes en abrir un *issue* o enviar un *pull request*.
 
 -----
 
 ### Licencia 📄
 
 Este proyecto está bajo la Licencia MIT.
-
------
-
-Este formato con los bloques de código es el estándar en GitHub y es mucho más fácil de leer y copiar. Si tienes otro proyecto en el que necesites ayuda, solo dime.
