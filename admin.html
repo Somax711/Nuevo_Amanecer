@@ -12,6 +12,40 @@
   <!-- Íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC60wWaJkmM1TwxXL3AOHvmEAwIFpMd9_M",
+      authDomain: "panelnuevoamanecer.firebaseapp.com",
+      projectId: "panelnuevoamanecer",
+      storageBucket: "panelnuevoamanecer.firebasestorage.app",
+      messagingSenderId: "932529658568",
+      appId: "1:932529658568:web:67ab7bb56a2388456863fd",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    const btnLogin = document.getElementById('btnLogin');
+    const loginMsg = document.getElementById('loginMsg');
+
+    btnLogin.addEventListener('click', async () => {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      loginMsg.textContent = "";
+
+      try {
+        await auth.signInWithEmailAndPassword(email, pass);
+
+        // REDIRIGIR AL PANEL
+        window.location.href = "/dashboard.html";
+
+      } catch (error) {
+        loginMsg.style.color = "#c0392b";
+        loginMsg.textContent = "Error: " + error.message;
+      }
+    });
+  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400..700&display=swap');
 *{
@@ -129,38 +163,5 @@
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
 
 
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyC60wWaJkmM1TwxXL3AOHvmEAwIFpMd9_M",
-      authDomain: "panelnuevoamanecer.firebaseapp.com",
-      projectId: "panelnuevoamanecer",
-      storageBucket: "panelnuevoamanecer.firebasestorage.app",
-      messagingSenderId: "932529658568",
-      appId: "1:932529658568:web:67ab7bb56a2388456863fd",
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    const btnLogin = document.getElementById('btnLogin');
-    const loginMsg = document.getElementById('loginMsg');
-
-    btnLogin.addEventListener('click', async () => {
-      const email = document.getElementById('email').value;
-      const pass = document.getElementById('password').value;
-      loginMsg.textContent = "";
-
-      try {
-        await auth.signInWithEmailAndPassword(email, pass);
-
-        // REDIRIGIR AL PANEL
-        window.location.href = "/dashboard.html";
-
-      } catch (error) {
-        loginMsg.style.color = "#c0392b";
-        loginMsg.textContent = "Error: " + error.message;
-      }
-    });
-  </script>
 </body>
 </html>
