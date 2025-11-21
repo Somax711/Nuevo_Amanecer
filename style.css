@@ -528,6 +528,11 @@
   font-size: 1rem;
   margin-bottom: 0;
 }
+@media (max-width: 600px) {
+  .favorito-card img {
+    height: 180px;
+  }
+}
 
 /* ====== SECCIÓN TESTIMONIOS ====== */
 .testimonios-section {
@@ -580,6 +585,14 @@
   font-weight: 600;
   font-size: 2rem;
 }
+
+@media (max-width: 600px) {
+  .testimonio-card {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+}
+
+
 /*=====SOBRE NOSOTRAS=====*/
 .sobre-nosotras-section {
   background-image: linear-gradient(148deg, rgba(255, 182, 211, 0.42) 47%, rgba(246, 190, 237, 0.4) 65%);
@@ -629,6 +642,12 @@
   justify-content: center;
 }
 
+@media (max-width: 600px) {
+  .sobre-nosotras-img {
+    width: 80px;
+    height: 80px;
+  }
+}
 /* ====== MÉTODOS DE TRABAJO ====== */
 .como-funciona-section {
   padding: 60px 0 40px 0;
@@ -684,6 +703,11 @@
 .como-funciona-card p {
   color: #7c3a53;
   font-size: 1rem;
+}
+@media (max-width: 600px) {
+  .como-funciona-card {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
 }
 
 /* ====== CONTACTO Y REDES ====== */

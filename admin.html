@@ -5,7 +5,7 @@
   <title>Admin - Nuevo Amanecer</title>
   <link rel="icon" href="/portadas/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="robots" content="noindex, nofollow">
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -154,7 +154,7 @@
         await auth.signInWithEmailAndPassword(email, pass);
 
         // REDIRIGIR AL PANEL
-        window.location.href = "dashboard.html";
+        window.location.href = "/dashboard.html";
 
       } catch (error) {
         loginMsg.style.color = "#c0392b";
@@ -162,6 +162,5 @@
       }
     });
   </script>
-
 </body>
 </html>
