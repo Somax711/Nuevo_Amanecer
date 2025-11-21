@@ -1,7 +1,7 @@
 # 🌅 Nuevo Amanecer — Regalos Personalizados  
 
 Sitio web oficial del emprendimiento **Nuevo Amanecer**, dedicado a la creación de regalos personalizados hechos con amor en **Puerto Montt, Chile**.  
-El proyecto está optimizado para rendimiento, SEO y despliegue en Vercel, con panel dinámico administrado en Firebase.
+El proyecto está optimizado para rendimiento, SEO y despliegue en Vercel, con panel dinámico administrado en Firebase
 
 ---
 
@@ -38,7 +38,7 @@ Incluye:
 - Botón “sorpresa” animado para conversiones.
 
 ### ☁️ Despliegue en Vercel  
-- Carpeta `/public` como raíz.  
+- Carpeta nuevo amanecer web como raíz.
 - HTTPS automático.  
 - Dominio `vercel.app`.  
 - Compatible con CI/CD desde GitHub.
@@ -61,21 +61,16 @@ Incluye:
 ## 📁 Estructura del Proyecto
 
 ```plaintext
-public/
-│── index.html
-│── productos.html
-│── portada.html
-│── style.css
-│── robots.txt
-│── sitemap.xml
-│── galeria-firebase.js
-│
-├── galeria/
-│   └── (imágenes del catálogo)
-│
-├── portadas/
-│   ├── favicon.ico
-│   └── logo_nuevo.png
+nuevoamanecerweb/
+│- index.html
+│- productos.html
+│- portada.html
+│- style.css
+│- robots.txt
+│- sitemap.xml
+│- galeria-firebase.js
+│-favicon.ico
+│-logo_nuevo.png
 ⚙️ Configuración en Firebase
 El proyecto utiliza Firestore con dos colecciones:
 
@@ -84,18 +79,18 @@ El proyecto utiliza Firestore con dos colecciones:
 El proyecto está configurado para desplegarse automáticamente desde GitHub.
 
 Pasos:
-Subir el proyecto con la carpeta /public.
+Subir el proyecto con la carpeta nuevo amanecer web.
 
 Importarlo en Vercel.
 
 Deploy automático.
 
 Resultado final:
-https://nuevo-amanecer.vercel.app
+https://nuevoamanecertienda.vercel.app/
 
 👩‍💻 Desarrollado por
-Karen Bustamante — KarenDEV.com
-Desarrolladora FullStack • UX/UI • Cloud • Firebase
+Karen Bustamante — 
+Desarrolladora FullStack-Analista Programador-Cloud
 
 📜 Licencia
 Este proyecto es de uso privado para el emprendimiento Nuevo Amanecer.
