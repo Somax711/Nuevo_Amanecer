@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- TÍTULO SEO -->
+  <title>Productos — Nuevo Amanecer | Tazas, Biblias, Agendas, Libretas y más</title>
+
+  <!-- META DESCRIPTION -->
+  <meta name="description" content="Explora los productos de Nuevo Amanecer: tazas personalizadas, agendas, biblias, libretas, llaveros, vasos, calendarios y más. Diseños únicos hechos a mano en Puerto Montt.">
+
+  <!-- KEYWORDS -->
+  <meta name="keywords" content="productos Nuevo Amanecer, tazas personalizadas, biblias personalizadas, agendas, libretas, llaveros, regalos personalizados, Puerto Montt">
+
+  <meta name="author" content="Nuevo Amanecer">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#ff8bbd">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Productos — Nuevo Amanecer">
+  <meta property="og:description" content="Regalos personalizados: tazas, biblias, agendas, libretas y más. Hecho a mano con amor.">
+  <meta property="og:image" content="https://nuevo-amanecer.vercel.app/portadas/logo_nuevo.png">
+  <meta property="og:url" content="https://nuevo-amanecer.vercel.app/productos.html">
+  <meta property="og:type" content="website">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Productos — Nuevo Amanecer">
+  <meta name="twitter:description" content="Explora nuestros productos personalizados: tazas, biblias, agendas y más.">
+  <meta name="twitter:image" content="https://nuevo-amanecer.vercel.app/portadas/logo_nuevo.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "CollectionPage",
+    "name": "Productos — Nuevo Amanecer",
+    "description": "Catálogo de productos personalizados: tazas, biblias, agendas, libretas y más.",
+    "image": "https://nuevo-amanecer.vercel.app/portadas/logo_nuevo.png",
+    "url": "https://nuevo-amanecer.vercel.app/productos.html"
+  }
+  </script>
+
+  <!-- FAVICON -->
+  <link rel="icon" href="/portadas/favicon.ico" type="image/x-icon">
+
+  <!-- ESTILOS -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+</head>
+<body>
+<!-- MENU -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="portada.html"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="portada.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="portada.html#sobrenosotras">Sobre Nosotras</a></li>
+        <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="portada.html#redesSociales">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CARRUSEL DINÁMICO DESDE FIREBASE -->
+ <h1 class="page-title">Nuestros Productos Personalizados</h1>
+<section class="productos-carrusel-section">
+  <h2 class="productos-title">Entrega Inmediata</h2>
+  <p class="productos-subtitle">Descubre nuestra variedad de productos disponibles.</p>
+
+  <button id="prevBtn" class="carrusel-btn carrusel-btn-left">◀</button>
+  <button id="nextBtn" class="carrusel-btn carrusel-btn-right">▶</button>
+
+  <div id="carousel" class="productos-carrusel"></div>
+
+  <hr class="separator" />
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", cargarCarrusel);
+
+async function cargarCarrusel() {
+    const cont = document.getElementById("carousel");
+    cont.innerHTML = "<p>Cargando carrusel...</p>";
+
+    try {
+        const snap = await db.collection("carrusel")
+            .orderBy("orden", "asc")
+            .get();
+
+        let html = "";
+        snap.forEach(doc => {
+            const data = doc.data();
+
+           html += `
+<div class="producto-card">
+  <img src="${data.imagenUrl}" alt="Producto personalizado de Nuevo Amanecer" loading="lazy">
+  <h3>Producto disponible</h3>
+  <p>Consulta por cualquiera de nuestros productos personalizados.</p>
+  <a href="https://wa.me/56959243283" target="_blank" class="producto-btn">
+    <i class="ph ph-whatsapp-logo"></i> Pedir por WhatsApp
+  </a>
+</div>`;
+
+        });
+
+        cont.innerHTML = html;
+
+    } catch (err) {
+        console.error("Error cargando carrusel:", err);
+        cont.innerHTML = "<p>No se pudo cargar el carrusel.</p>";
+    }
+}
+</script>
+
+  <hr class="separator" />
+</section>
+
+
+<!-- FILTROS -->
+<section class="galeria-section">
+  <div class="galeria-filtros">
+      <button onclick="filtrarGaleria('todos')">Ver Todo</button>
+      <button onclick="filtrarGaleria('tazas')">Tazas</button>
+      <button onclick="filtrarGaleria('vasos')">Vasos</button>
+      <button onclick="filtrarGaleria('libretas')">Libretas</button>
+      <button onclick="filtrarGaleria('imantados')">Imantados</button>
+      <button onclick="filtrarGaleria('biblias')">Biblias</button>
+      <button onclick="filtrarGaleria('libros_colorear')">Libros de colorear</button>
+      <button onclick="filtrarGaleria('llaveros')">Llaveros</button>
+      <button onclick="filtrarGaleria('agendas')">Agendas</button>
+      <button onclick="filtrarGaleria('calendarios')">Calendarios</button>
+  </div>
+
+  <!--galeria conectada a panel-->
+  <h2 class="galeria-title">✨ Galería de Fotos</h2>
+  <div class="galeria-grid" id="galeria-contenedor"></div>
+
+
+</section>
+<!-- BOTÓN SORPRESA -->
+<div id="botonSorpresa" class="boton-sorpresa">
+  🎁 ¡Diseñamos tu idea! Haz tu pedido aquí 💌
+</div>
+<div id="colaBoton" class="cola-boton" onclick="mostrarBotonSorpresa()">
+  📩
+</div>
+
+<script src="galeria-firebase.js" defer></script>
+
+<!-- CARRUSEL JS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const carrusel = document.getElementById("carousel");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  function getScrollAmount() {
+    const card = carrusel.querySelector('.producto-card');
+    return card ? card.offsetWidth + 32 : 260;
+  }
+
+  prevBtn.onclick = () => carrusel.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+  nextBtn.onclick = () => carrusel.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+});
+</script>
+
+<!-- WHATSAPP BTN -->
+<script>
+const phone = "56959243283";
+const msg = encodeURIComponent("Hola, quiero hacer una consulta desde la web Nuevo Amanecer");
+const url = `https://wa.me/${phone}?text=${msg}`;
+
+document.querySelectorAll(".whatsappLink").forEach(btn => {
+  btn.onclick = e => { e.preventDefault(); window.open(url, "_blank"); };
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    cargarGaleriaPublica();
+});
+
+async function cargarGaleriaPublica() {
+    const cont = document.getElementById("galeria-contenedor");
+    cont.innerHTML = "<p>Cargando galería...</p>";
+
+    try {
+        const snap = await db.collection("galeria")
+            .orderBy("orden", "asc")
+            .get();
+
+        let lista = [];
+        snap.forEach(doc => lista.push(doc.data()));
+
+        renderizarGaleriaPublica(lista);
+
+    } catch (e) {
+        console.error(e);
+        cont.innerHTML = "<p>No se pudo cargar la galería.</p>";
+    }
+}
+
+
+function renderizarGaleriaPublica(lista) {
+    const cont = document.getElementById("galeria-contenedor");
+    cont.innerHTML = "";
+    lista.forEach(item => {
+        cont.innerHTML += `
+    <div class="galeria-item" data-category="${item.categoria}">
+     <img src="${item.imagenUrl}" alt="${item.categoria} personalizadas Nuevo Amanecer" loading="lazy">
+      </div>`;
+    });
+  }
+// FILTROS DE GALERÍA
+function filtrarGaleria(categoria) {
+  const items = document.querySelectorAll(".galeria-item");
+
+  items.forEach(item => {
+    const cat = item.getAttribute("data-category");
+
+    if (categoria === "todos" || cat === categoria) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
+// BOTÓN SORPRESA 
+function mostrarBotonSorpresa() {
+  const boton = document.getElementById("botonSorpresa");
+  boton.style.display = "block";
+  setTimeout(() => boton.style.display = "none", 5000);
+}
+
+setTimeout(mostrarBotonSorpresa, 4000);
+setInterval(mostrarBotonSorpresa, 20000);
+
+document.getElementById("botonSorpresa").onclick = () => {
+  window.location.href = "portada.html#redesSociales";
+};
+</script>
+
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
+
+ <script>
+const firebaseConfig = {
+  apiKey: "AIzaSyC60wWaJkmM1TwxXL3AOHvmEAwIFpMd9_M",
+  authDomain: "panelnuevoamanecer.firebaseapp.com",
+  projectId: "panelnuevoamanecer",
+  storageBucket: "panelnuevoamanecer.firebasestorage.app",
+  messagingSenderId: "932529658568",
+  appId: "1:932529658568:web:67ab7bb56a2388456863fd",
+};
+
+// Inicializar Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+</script>
+
+
+<!-- FOOTER -->
+<footer class="footer-section">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="galeria/logo_nuevo.png" alt="Logo Nuevo Amanecer" class="footer-logo-img" loading="lazy">
+    </div>
+    <div class="footer-info">
+      <p>© 2025 Nuevo Amanecer. Todos los derechos reservados.</p>
+      <p>Diseñado por <strong>KarenDEV.com</strong></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
