@@ -6,54 +6,14 @@
   <link rel="icon" href="/portadas/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyC60wWaJkmM1TwxXL3AOHvmEAwIFpMd9_M",
-      authDomain: "panelnuevoamanecer.firebaseapp.com",
-      projectId: "panelnuevoamanecer",
-      storageBucket: "panelnuevoamanecer.firebasestorage.app",
-      messagingSenderId: "932529658568",
-      appId: "1:932529658568:web:67ab7bb56a2388456863fd",
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    const btnLogin = document.getElementById('btnLogin');
-    const loginMsg = document.getElementById('loginMsg');
-
-    btnLogin.addEventListener('click', async () => {
-      const email = document.getElementById('email').value;
-      const pass = document.getElementById('password').value;
-      loginMsg.textContent = "";
-
-      try {
-        await auth.signInWithEmailAndPassword(email, pass);
-
-        // REDIRIGIR AL PANEL
-        window.location.href = "/dashboard.html";
-
-      } catch (error) {
-        loginMsg.style.color = "#c0392b";
-        loginMsg.textContent = "Error: " + error.message;
-      }
-    });
-  </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400..700&display=swap');
-*{
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: italic;
-}
     body {
       margin: 0;
       padding: 0;
@@ -75,14 +35,8 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(15px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
@@ -105,13 +59,6 @@
       border-radius: 10px;
       border: 1px solid #ddd;
       font-size: 1rem;
-      transition: 0.3s;
-    }
-
-    .input-box:focus {
-      border-color: #d67aa7;
-      box-shadow: 0 0 6px rgba(214, 122, 167, 0.5);
-      outline: none;
     }
 
     .btn-login {
@@ -123,20 +70,9 @@
       padding: 12px;
       border-radius: 12px;
       cursor: pointer;
-      transition: 0.3s;
       font-size: 1rem;
     }
 
-    .btn-login:hover {
-      opacity: 0.85;
-    }
-
-    #loginMsg {
-      margin-top: 15px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
   </style>
 </head>
 
@@ -162,6 +98,38 @@
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
 
+  <!-- SCRIPT CORRECTO (DEBE IR AQUÍ) -->
+  <script>
+    // CONFIGURACIÓN FIREBASE
+    const firebaseConfig = {
+      apiKey: "AIzaSyC60wWaJkmM1TwxXL3AOHvmEAwIFpMd9_M",
+      authDomain: "panelnuevoamanecer.firebaseapp.com",
+      projectId: "panelnuevoamanecer",
+      storageBucket: "panelnuevoamanecer.firebasestorage.app",
+      messagingSenderId: "932529658568",
+      appId: "1:932529658568:web:67ab7bb56a2388456863fd"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // LOGIN
+    document.getElementById("btnLogin").addEventListener("click", async () => {
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("loginMsg");
+
+      msg.textContent = "";
+
+      try {
+        await auth.signInWithEmailAndPassword(email, pass);
+        window.location.href = "/dashboard.html";
+      } catch (error) {
+        msg.style.color = "#c0392b";
+        msg.textContent = "Error: " + error.message;
+      }
+    });
+  </script>
 
 </body>
 </html>
