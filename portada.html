@@ -112,59 +112,78 @@
 </section>
 
 <!--categorias-->
+ <h2 class="categorias-title">Categorias</h2> 
 <section class="categorias">
-  <div class="categoria-card" id="tazas" loading="lazy">
-    <div class="icono"><i class="fas fa-mug-hot"></a></i></div>
-    <h3 >Tazas</h3>
+  <div class="categoria-card" id="tazas" loading="lazy" >
+    <div class="icono"><i class="fas fa-mug-hot"></i></div>
+     <a href="productos.html" id="galeria-section">
+    <h3>Tazas</h3>
     <p class="descripcion">Comienza tu día con un sorbo de fe </p>
+     </a>
   </div>
 
    <div class="categoria-card"  id="vasos" loading="lazy">
     <div class="icono"><i class="fas fa-glass-whiskey"></i></div>
+     <a href="productos.html" id="galeria-section">
     <h3>Vasos</h3>
     <p class="descripcion">Refresca tu espíritu con cada trago </p>
+     </a>
   </div>
 
    <div class="categoria-card" id="libretas" loading="lazy">
     <div class="icono"><i class="fas fa-book"></i></div>
+     <a href="productos.html" id="galeria-section">
     <h3>Libretas</h3>
     <p class="descripcion">Escribe tus sueños y oraciones </p>
+     </a>
   </div>
    
    <div class="categoria-card"  id="imantados" loading="lazy" >
     <div class="icono"><i class="fas fa-magnet"></i></div>
+     <a href="productos.html" id="galeria-section">
     <h3> Imantados</h3>
     <p class="descripcion">Mensajes que inspiran tu día a día </p>
+     </a>
   </div>
   
  <div class="categoria-card"  id="biblias"  loading="lazy">
     <div class="icono"><i class="fas fa-cross"></i></div>
+     <a href="productos.html" id="galeria-section">
     <h3>Biblias</h3>
     <p class="descripcion">Palabras que transforman vidas </p>
+     </a>
   </div>
 
   <div class="categoria-card"  id="libros_colorear"  loading="lazy">
     <div class="icono"><i class="fas fa-book-open"></i></div>
+     <a href="productos.html" id="galeria-section">
     <h3>Libros colorear</h3>
     <p class="descripcion">Distintos diseños</p>
+     </a>
   </div>
 
   <div class="categoria-card"  id="calendarios"  loading="lazy">
     <div class="icono"><i class="fas fa-calendar-alt"></i></div>
+     <a href="productos.html" id="galeria-section">
     <h3>Calendarios</h3>
     <p class="descripcion">Organiza tu tiempo con propósito </p>
+     </a>
   </div>
 
   <div class="categoria-card" id="llaveros" loading="lazy">
     <div class="icono"><i class="fas fa-key"></i></div>
+     <a href="productos.html" id="galeria-section">
     <h3>Llaveros</h3>
     <p class="descripcion">Lleva inspiración a donde vayas </p>
+     </a>
   </div>
 
   <div class="categoria-card"  id="agendas"  loading="lazy">
     <div class="icono"><i class="fas fa-calendar-alt"></i></div>
+     <a href="productos.html" id="galeria-section">
     <h3>Agendas</h3>
     <p class="descripcion">Organiza tus días con propósito </p>
+     </a>
   </div>
 </section>
 
@@ -175,27 +194,28 @@
     <h2 class="favoritos-title">Nuestros Favoritos</h2> 
     <div class="favoritos-grid">
       <div class="favorito-card">
-        <img src="galeria/taza_mama_favoritos.png" alt="Taza de sublimación personalizada con diseño creativo" id="tazas" loading="lazy" />
-        <h3>Taza Mamá</h3>
-        <p>Taza personalizada con mensaje especial.</p>
+        <img src="galeria/favoritos.jpg" alt="Biblia de promesas para niñas" id="biblias" loading="lazy" />
+        <h3>Biblia de promesas.</h3>
      <i class="ph ph-heart"></i> 
     </div>
+
+
       <div class="favorito-card">
-        <img src="galeria/biblia_niñas_favoritos.png" alt="Biblia para niñas personalizada "  id="bibias" loading="lazy"/>
-        <h3>Biblia Niñas</h3>
-        <p>Biblia ilustrada y personalizada para niñas.</p>
+        <img src="galeria/favoritos2.jpg" alt="Agenda dúo"  id="agenda" loading="lazy"/>
+        <h3>Agenda dúo de estudio bíblico</h3>
+  
+        <i class="ph ph-heart"></i> 
+      </div>
+
+
+      <div class="favorito-card">
+        <img src="galeria/favoritos3.jpg" alt="Llavero con promesas Bíblicas"  id="llaveros" loading="lazy"/>
+        <h3>Llaveros de promesas biblicas</h3>
         <i class="ph ph-heart"></i> 
       </div>
       <div class="favorito-card">
-        <img src="galeria/llavero_destacado_favoritos.png" alt="Llaveros personalizados con motivos cristianos"  id="llaveros" loading="lazy"/>
-        <h3>Llaveros</h3>
-        <p>Llaveros con iniciales y detalles únicos.</p>
-        <i class="ph ph-heart"></i> 
-      </div>
-      <div class="favorito-card">
-        <img src="galeria/agenda_jasmin_favoritos.png" alt="Agenda personalizada" id="agendas" loading="lazy"/>
-        <h3>Agenda 2025</h3>
-        <p>Agenda personalizada para organizar tu año.</p>
+        <img src="galeria/favoritos4.jpg" alt=" Agenda cristiana" id="agendas" loading="lazy"/>
+        <h3> Agenda cristiana</h3>
         <i class="ph ph-heart"></i> 
       </div>
     </div>
@@ -290,8 +310,9 @@
 <div id="colaBoton" class="cola-boton" onclick="mostrarBotonSorpresa()">
   📩
 </div>
-
   <script>
+
+   
   function mostrarBotonSorpresa() {
     const boton = document.getElementById("botonSorpresa");
     boton.style.display = "block";
@@ -300,17 +321,14 @@
       boton.style.display = "none";
     }, 5000); 
   }
-
   // Mostrar inicialmente después de 4 segundos
   setTimeout(() => {
     mostrarBotonSorpresa();
   }, 4000);
-
   // Repetir cada 20 segundos
   setInterval(() => {
     mostrarBotonSorpresa();
   }, 20000);
-
   document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("botonSorpresa").onclick = function () {
       window.location.href = "#redesSociales";

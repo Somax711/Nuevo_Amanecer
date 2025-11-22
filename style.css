@@ -6,6 +6,9 @@
   font-style: italic;
 }
 /*=====BOTON SORPRESA=====*/
+ a {
+  text-decoration: none !important;
+}
 
 .boton-sorpresa {
   position: fixed;
@@ -377,6 +380,7 @@
 }
 /* tarjeta circular */
 .categoria-card {;
+  background: #ffe3f246;
   border-radius: 50%;
   width: 150px;
   height: 150px;
@@ -408,11 +412,13 @@
 }
 /*=====DESCRIPCION==== */
 .descripcion {
+  text-decoration: none;
   color: #a33b67;
   font-size: 0.61rem;
   margin-bottom: 1.2rem;
   padding: 0 0.5rem;
 }
+
 
 /* Responsividad para pantallas moviles */
 @media (max-width: 600px) {
@@ -424,7 +430,6 @@
   .icono {
     font-size: 2rem;
   }
-
 }
 
 /*separadores*/
@@ -442,37 +447,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-
-/* ====PRODUCTOS DESTACADOS====*/
-#productos .grid > div {
-  transition: box-shadow 0.3s, transform 0.3s;
-  border: none;
-}
-#productos .grid > div:hover {
-  box-shadow: 0 8px 32px 0 #fd64a9a0;
-  transform: translateY(-6px) scale(1.03);
-}
-#productos img {
-  height: 220px;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 1rem 1rem 0 0;
-}
-#productos h3 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-#productos a {
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-/* Responsive ajustes */
-@media (max-width: 768px) {
-  .menu-hero { flex-direction: column; gap: 1rem; }
-  #productos .grid > div img { height: 160px; }
 }
 
 /* ====== SECCIÓN FAVORITOS ====== */
