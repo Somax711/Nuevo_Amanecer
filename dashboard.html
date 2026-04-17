@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>   
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400..700&display=swap');
-  *{
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: italic;
-  }
+
+    * {
+      font-family: "Lora", serif;
+      font-optical-sizing: auto;
+      font-style: italic;
+    }
 
     body {
       margin: 0;
@@ -52,6 +52,7 @@
       text-decoration: none;
       font-size: 1rem;
       transition: 0.3s;
+      cursor: pointer;
     }
 
     .sidebar a:hover,
@@ -172,94 +173,98 @@
     .delete-btn:hover {
       background: #d93636;
     }
-
   </style>
-  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-storage-compat.js"></script>
-
-<script>
-firebase.auth().onAuthStateChanged(function(user) {
-  if (!user) {
-    window.location.href = "/admin.html";
-  }
-});
-</script>
-
-<script>
-  const firebaseConfig = {
-      apiKey: "AIzaSyC60wWaJkmM1TwxXL3AOHvmEAwIFpMd9_M",
-      authDomain: "panelnuevoamanecer.firebaseapp.com",
-      projectId: "panelnuevoamanecer",
-      storageBucket: "panelnuevoamanecer.firebasestorage.app",
-      messagingSenderId: "932529658568",
-      appId: "1:932529658568:web:67ab7bb56a2388456863fd",
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-  const storage = firebase.storage();
-</script>
 </head>
 <body>
+
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <h2>Nuevo Amanecer</h2>
     <a id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
   </aside>
+
   <!-- MAIN -->
   <main class="main">
     <h1>Panel Principal</h1>
-    <!-- SUBIR IMAGEN -->
+
+    <!-- SUBIR IMAGEN GALERÍA -->
     <div class="card">
       <h3>Agregar imagen a la galería</h3>
       <input type="file" id="imagenArchivo" class="input-box">
       <input type="text" id="imagenTitulo" class="input-box" placeholder="Título de la imagen">
       <select id="imagenCategoria" class="input-box">
-        <option value="agendas">Agendas</option>
         <option value="tazas">Tazas</option>
         <option value="vasos">Vasos</option>
         <option value="libretas">Libretas</option>
-        <option value="imantados">Imantados</option> 
+        <option value="imantados">Imantados</option>
         <option value="biblias">Biblias</option>
         <option value="libros_colorear">Libros de colorear</option>
         <option value="llaveros">Llaveros</option>
         <option value="agendas">Agendas</option>
         <option value="calendarios">Calendarios</option>
       </select>
-
       <button class="btn-primary-custom" id="btnSubir">
         <i class="fa-solid fa-cloud-arrow-up"></i> Subir imagen
       </button>
-
       <p id="uploadMsg" style="margin-top:15px;"></p>
     </div>
+
     <!-- CARRUSEL -->
-<div class="card">
-  <h3>Carrusel (Entrega Inmediata)</h3>
+    <div class="card">
+      <h3>Carrusel (Entrega Inmediata)</h3>
+      <input type="file" id="carruselArchivo" class="input-box">
+      <button class="btn-primary-custom" id="btnSubirCarrusel">
+        <i class="fa-solid fa-cloud-arrow-up"></i> Subir imagen
+      </button>
+      <p id="carruselMsg" style="margin-top:15px;"></p>
+      <h4 style="margin-top:20px;">Imágenes actuales del carrusel</h4>
+      <div id="carruselContainer" class="gallery-grid"></div>
+    </div>
 
-  <input type="file" id="carruselArchivo" class="input-box">
-  
-  <button class="btn-primary-custom" id="btnSubirCarrusel">
-     <i class="fa-solid fa-cloud-arrow-up"></i> Subir imagen
-  </button>
-
-  <p id="carruselMsg" style="margin-top:15px;"></p>
-
-  <h4 style="margin-top:20px;">Imágenes actuales del carrusel</h4>
-  <div id="carruselContainer" class="gallery-grid"></div>
-</div>
-
-    <!-- GALERÍA de imagenes subidas-->
+    <!-- GALERÍA ACTUAL -->
     <div class="card">
       <h3>Galería actual</h3>
       <div id="galleryContainer" class="gallery-grid"></div>
     </div>
   </main>
-<!-- Firebase -->
+
+  <!--  FIREBASE -->
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-storage-compat.js"></script>
+
+  <script>
+    //Inicializar Firebase 
+    const firebaseConfig = {
+      apiKey: "AIzaSyC60wWaJkmM1TwxXL3AOHvmEAwIFpMd9_M",
+      authDomain: "panelnuevoamanecer.firebaseapp.com",
+      projectId: "panelnuevoamanecer",
+      storageBucket: "panelnuevoamanecer.firebasestorage.app",
+      messagingSenderId: "932529658568",
+      appId: "1:932529658568:web:67ab7bb56a2388456863fd"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth    = firebase.auth();
+    const db      = firebase.firestore();
+    const storage = firebase.storage();
+
+    auth.onAuthStateChanged(function(user) {
+      if (!user) {
+        window.location.href = "/admin.html";
+      }
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      auth.signOut().then(() => {
+        window.location.href = "/admin.html";
+      });
+    });
+
+  </script>
   <script src="galeria-firebase.js"></script>
+
 </body>
 </html>
